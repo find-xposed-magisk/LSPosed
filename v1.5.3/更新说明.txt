@@ -1,0 +1,8 @@
+### Changelog
+- Optimize logcat
+- Fix manager crash when scrolling to the bottom of an empty log
+- Fix crash of randomized Magisk manager
+### 更新日志
+- 优化日志
+- 修复管理器在滚动到空日志的底部时候崩溃
+- 修复随机包名的 Magisk 崩溃

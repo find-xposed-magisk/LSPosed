@@ -1,0 +1,45 @@
+### Changelog
+
+- Support Zygisk¹
+- Repositories support update channel
+- Repositories show the number of upgradable modules on the front page
+- Log supports word wrap
+- Fix rare crash of parasitic manager
+- Automatically enable Resources Hook if needed
+- Filter sensitive information when sharing log from the parasitic manager
+- Fix potential inactivation on some weird devices
+- Tested Android 12.1 support
+
+### 更新日志
+- 支持 Zygisk¹
+- 仓库支持更新通道
+- 仓库支持在主页显示可更新模块数量
+- 日志支持自动换行
+- 修复寄生管理器罕见的崩溃
+- 在需要的时候自动开启资源挂钩，管理器删除控制开关。
+- 在寄生管理器中分享日志时过滤敏感信息
+- 修复奇怪设备上可能发生的未激活
+- 测试支持 Android 12.1
+- 在关于页面加入 QQ 频道入口²
+
+¹ About Zygisk
+1. LSPosed will not release the Zygisk version until Magisk releases its first stable version with Zygisk support, but you can test with CI build.
+2. Zygisk and Riru are doing the same thing: inject into Zygote. 
+3. Zygisk and Riru are not complete alternatives to each other.
+4. Once Zygisk is enabled from Magisk, Riru and its modules will **NOT** load anymore. You have to choose one but not both.
+5. Magisk will remove Magisk Hide and Magisk Repo from the next release.
+6. Zygisk has a denylist that revokes almost all changes made by Magisk (Note it's not doing the same thing as Magisk Hide, and it CANNOT view as an alternative to Magisk Hide).
+7. Revocation includes Zygisk modules. That means apps in the denylist will NOT load Zygisk modules, including the Zygisk version of LSPosed, so those apps cannot load Xposed modules.
+8. Riru has a Riru Hide that avoids apps to detect it. However, Zygisk does not have the same stuff. Apps can thus discover Zygisk even they are in the denylist.
+
+¹ 关于 Zygisk
+1. LSPosed 在 Magisk 发布其第一个支持 Zygisk 的稳定版本之前不会发布基于 Zygisk 的版本，阁下仍可使用 CI 构建进行测试。
+2. Zygisk 和 Riru 在做同一件事：注入 Zygote。
+3. Zygisk 和 Riru 并不完全是彼此的替代品。
+4. 一旦在 Magisk 中 启用 Zygisk，Riru及其模块就**不会**再加载。你必须二者选其一，不能同时选择。
+5. Magisk 将在下一个版本中删除 Magisk Hide 和 Magisk Repo.
+6. Zygisk 有一个排除列表，可以撤销 Magisk 所做的几乎所有修改（注意它和 Magisk Hide 做的不是同样的事，因此它不能作为 Magisk Hide 的替代品）。
+7. 撤销的修改包括 Zygisk 模块。这意味着排除列表中的应用程序不会加载 Zygisk 模块，包括 Zygisk 版本的 LSPosed，因而这些应用程序将无法加载 Xposed 模块。
+8. Riru 有一个 Riru Hide，可以避免应用程序检测到它。然而，Zygisk 没有同样的东西。因此，即使应用程序在排除列表中，它们依然可以发现 Zygisk。
+
+² QQ 频道需要实名才可加入，请自行斟酌。该频道仅用于方便中国大陆用户获取更新，并不提供完整技术支持。

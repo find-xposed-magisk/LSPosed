@@ -1,0 +1,15 @@
+### Changelog
+- Fix in some cases modules are not updated
+- Fix manager crash on some Samsung devices
+- New logger
+- Auto compress logs to .zip file
+- Move all configs to database
+- Module updates are also prompted on the repo page
+
+### 更新日志
+- 修复某些情况下模块不会更新
+- 修复在某些三星设备上崩溃
+- 新的日志记录器
+- 自动将日志文件压缩为.zip
+- 迁移所有设置项到数据库
+- 模块更新同样提示在仓库页

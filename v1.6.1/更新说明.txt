@@ -1,0 +1,29 @@
+### Changelog
+- Fix the module status in the running manager after reinstalling modules
+- Fix recommendation scope activation of newly installed modules
+- Fix manager crashes in some cases
+- Fix parasitic manager crash on Android 9
+- Fix compatibility of some devices (such as Meizu and 360 phones)
+- Support updating Core within the manager since Magisk Repo is out of maintenance
+- Screen configuration changing (e.g. screen orientation changes) will no longer trigger shortcut request
+- Embraces Material You style
+- Allow turning off shortcut request (visible only on non-parasitic manager)
+- Support launching manager by secret code `*#*#5776733#*#*` (digits correspond to LSPosed)
+- Allow recompiling modules
+- Perform recompiling on the backend for compatibility with Android 12
+- Prepare for Zygisk support
+
+## 更新日志：
+- 修复模块重装导致的管理器状态混乱
+- 修复首次安装模块时模块激活推荐作用域失败
+- 修复管理器在某下情况下的崩溃
+- 修复寄生管理器在 Android 9 上的崩溃
+- 改进寄生管理器在某些设备（如魅族、360）的兼容性
+- 改进应用内更新，现在可以直接在管理器内安装核心
+- 现在系统设置变更（如屏幕方向改变）不会再请求新增快捷方式，仅会更新已存在的图标
+- 使用 Material You 风格
+- 新增自动添加快捷方式的开关
+- 新增通过暗码 `*#*#5776733#*#*` 唤起管理器（数字对应 LSPosed）
+- 新增允许对模块重新优化
+- 在后端进行重新优化操作以兼容 Android 12
+- 准备兼容 Zygisk

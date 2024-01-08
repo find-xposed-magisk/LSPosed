@@ -1,0 +1,109 @@
+This version was replaced by [v1.9.1](https://github.com/LSPosed/LSPosed/releases/tag/v1.9.1) due to a signature error
+<details>
+
+### API Changes
+* Implementation of [Modern Xposed API](https://github.com/LSPosed/LSPosed/wiki/Develop-Xposed-Modules-Using-Modern-Xposed-API):
+Currently, most part of the new API has been roughly stable (except `helper`). We hope developers can test the new API to provide feedback on possible issues. The modern API will be published to Maven Central with the release of LSPosed 2.0.0, so before this, you can make suggestions to help make it better.
+* Allow hooking processes of the `android` package besides `system_server` ([See this commit](https://github.com/LSPosed/LSPosed/commit/6f6c4b67d736e96a61f89b5db22c2e9bbde19461)): For historical reasons, the package name of `system_server` was changed to `android` (See [this commit from rovo89](https://github.com/rovo89/XposedBridge/commit/6b49688c929a7768f3113b4c65b429c7a7032afa)). To correct this behavior, for legacy modules, no code adjustment is needed, but the system framework is displayed as `system` instead of `android` in manager, with a new package `android` which is responsible for system dialogs, etc. For modern modules, the meaning of `system` and `android` in the declared scope have the same meaning as they display in manager.
+<details>
+
+```
+system_server: uid=1000 pkg=system  proc=system
+ChooserActivity,ResolverActivity: uid=1000 pkg=android proc=android:ui,system:ui
+```
+</details>
+
+### Changelog
+* Fix manager failed to launch when typing secret code in dialer
+* Fix notification on Samsung
+* Add Vercel/Cloudflare fallback for module repository
+* Magisk version requires 24.0+, and for Riru favor, requires Riru  26.1.7+
+* Make dex2oat wrapper more compatible, e.g. on KernelSU
+* Fix some hooks on Android 8.1
+* Add more hints for creating the shortcut and notification
+* Fix backup race, fix 'JNI DETECTED ERROR IN APPLICATION: java_object == null'
+* Fix `processName` for `handleLoadedPackage`'s `lpparam`
+* Fix `isFirstPackage` for `afterHookedMethod`
+* Fix notification intent for Android 14
+* Fix manager dark theme
+* Unconditional allow create shortcut except default desktop is not supported
+* Fix NPE due to null `getModule()` return value
+* Fix the typo in `AfterHooker` class name
+* A11y: Add label for search buttons
+* Set EUID to 1000 to fix notification and get modules list for Flyme
+* Fix a race by lock-free backup implementation
+* Predefine some SQLite modes for better performance
+* Set db sync mode for Android P+, fix some Oplus devices not working
+* Skip secondary classloaders that do not include code
+* Avoid NPE when rendering empty markdown, fix a manager crash
+* Add Installed hint for repo modules
+* [translation] Update translation from Crowdin
+* Upgrade target SDK to 34
+* Only clear module's `LoadedApks` rather than all
+* Upgrade Dobby, fix native hook on arm32
+* Show manager package name instead of version
+* Always allow pinning shortcuts, regardless of whether they are pinned or not
+* Fix ANR when the boot is completed for Android 14
+* Fix `IActivityManager.bindService` for Android 14
+* Don't shrink non-AdaptiveIcons
+* Fix the task icon for the manager
+* Enable Xposed API call protection by default
+
+
+### API 变更
+* 实现了 [Modern Xposed API](https://github.com/LSPosed/LSPosed/wiki/Develop-Xposed-Modules-Using-Modern-Xposed-API)：
+目前，新 API 的大部分已经相对稳定（除了 `helper`）。我们希望开发者能够测试新 API，并提供反馈以解决可能存在的问题。现代 API 将在 LSPosed 2.0.0 发布时发布到 Maven Central，因此在此之前，您可以提出建议以帮助改进它。
+* 允许钩住 `system_server` 外的 `android` 进程（[查看此提交](https://github.com/LSPosed/LSPosed/commit/6f6c4b67d736e96a61f89b5db22c2e9bbde19461)）：
+由于历史原因，`system_server` 的包名被更改为 `android`，`ChooserActivity`等系统UI的包名被更改为 `system`（请参阅 [rovo89 的此提交](https://github.com/rovo89/XposedBridge/commit/6b49688c929a7768f3113b4c65b429c7a7032afa)）。为纠正此行为，管理器作用域界面中的 `system` 和 `android` 的含义现与它们的实际含义相同。我们保留传统模块代码层面的相反含义，但现代模块已得到更正。
+
+<details>
+
+```
+system_server: uid=1000 pkg=system  proc=system
+ChooserActivity,ResolverActivity: uid=1000 pkg=android proc=android:ui,system:ui
+```
+</details>
+
+### 更新日志
+* 修复在拨号器中输入暗码启动管理器无效的问题
+* 修复三星设备上的通知问题
+* 添加 Vercel/Cloudflare 作为模块仓库的后备方案
+* Magisk 版本要求 24.0+，对于 Riru，要求 Riru 26.1.7+
+* 使 dex2oat 包装器更兼容，例如在 KernelSU 上
+* 修复 Android 8.1 上的一些钩子问题
+* 为创建快捷方式和通知添加更多提示
+* 修复备份冲突，修复 'JNI DETECTED ERROR IN APPLICATION: java_object == null'
+* 修复 `handleLoadedPackage` 的 `lpparam` 中的 `processName`
+* 修复 `afterHookedMethod` 的 `isFirstPackage`
+* 修复 Android 14 的通知意图
+* 修复管理器的暗色主题
+* 无条件允许创建快捷方式，除非不支持默认桌面
+* 修复由于空的 `getModule()` 返回值引起的 NPE
+* 修复 `AfterHooker` 类名中的拼写错误
+* 辅助功能：为搜索按钮添加标签
+* 将 EUID 设置为 1000 以修复 Flyme 上的通知和模块列表
+* 通过无锁备份实现修复竞争问题
+* 预定义一些 SQLite 模式以提高性能
+* 为 Android P+ 设置 db 同步模式，修复一些 Oplus 设备无法工作的问题
+* 跳过不包含代码的次级类加载器
+* 在渲染空的 Markdown 时避免 NPE，修复管理器崩溃问题
+* 为仓库模块添加已安装提示
+* [翻译] 从 Crowdin 更新翻译
+* 将目标 SDK 升级到 34
+* 只清除模块的 `LoadedApks` 而不是全部清除
+* 升级 Dobby，修复在 arm32 上的native hook问题
+* 显示管理器的包名而不是版本号
+* 始终允许固定快捷方式，无论它们是否已固定
+* 修复 Android 14 启动完成后的 ANR 问题
+* 修复 Android 14 的 `IActivityManager.bindService`
+* 不为非自适应图标应用系统图标形状
+* 修复管理器的任务图标
+* 默认启用 Xposed API 调用保护功能
+
+### Contributors
+
+@libxzr @yujincheng08 @Howard20181 @vvb2060 @Dr-TSNG @naicfeng @aviraxp @StefMa @delvinru @5ec1cff @anonymix007 @JasonKhew96
+
+
+**Full Changelog**: https://github.com/LSPosed/LSPosed/compare/v1.8.6...v1.9.0
+</details>

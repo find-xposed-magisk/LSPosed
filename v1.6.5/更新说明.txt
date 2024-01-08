@@ -1,0 +1,22 @@
+### Changelog
+- Fix bootloop on some OPPO devices
+- Enable the resources hook when calling `SystemWideReplace`
+- Retain parasitic manager in recent tasks 
+- More MD3 style design
+- Fix denylist warning
+- Fix module update broadcast in Android 12
+- Support Lenovo (Motorola) app clones
+- Fix system properties export on some devices
+- Fix modules not working on some weird devices (Lenovo pad)
+
+### 更新日志
+- 修复部分 OPPO 设备上的 bootloop
+- 调用 `SystemWideReplace` 时候自动开启资源钩子
+- 在最近任务中显示寄生管理器
+- 更多 MD3 风格设计
+- 修复拒绝列表警告
+- 修复 Android 12 下模块更新广播
+- 支持联想（摩托罗拉）应用多开
+- 修复部分设备下系统属性导出
+- 修复在奇怪设备下（联想平板）模块不生效的问题
+- 更新 QQ 频道链接

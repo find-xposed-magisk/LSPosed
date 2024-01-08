@@ -1,0 +1,7 @@
+### Changelog
+- Fix module scope can only be set on one user
+- Fix in some devices users are not fully listed
+
+### 更新日志
+- 修复模块只用于只能在一个用户上设置
+- 修复某些设备上不能列出所有用户

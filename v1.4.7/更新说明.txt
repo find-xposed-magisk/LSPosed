@@ -1,0 +1,5 @@
+### Changelog
+- Fix system injection failure on some devices
+
+### 更新日志
+- 修复某些设备上的系统框架注入失败

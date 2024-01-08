@@ -1,0 +1,20 @@
+### Changelog
+- Fix in a rare case system modules not working
+- Workaround for that some low-quality modules stick `post-fs-data.sh`
+- Update native hook API
+- Follow some changes on Android S (support S Beta 1 now)
+- Restrict hidden API bypass to modules' classloader only
+- Add an option to help modules to hide their icons on Android Q+
+- New way to better support dual apps/multi-users<sup>1</sup>
+
+### 更新日志
+- 修复极小概率的系统模块无法生效
+- 解决某些低质模块卡死 `post-fs-data.sh` 的情况
+- 更新 native hook 的 API
+- 跟进一些 Android S 上的修改（兼容 Android S Beta 1）
+- 限制仅模块类加载器允许绕过隐藏 API
+- 添加选项帮助模块在 Android Q+ 上隐藏图标
+- 支持双开、多开应用的新策略<sup>1</sup>
+
+1. Previously LSPosed only recognize modules from the primary user. However, this strategy is not good and leads to some problems: some modules require getting installed app lists for configuration but they cannot do so across users; some require reading themselves from the hooked apps but they cannot do so from non-primary users; some users want to configure modules differently on different users which is not feasible previously. Thus LSPosed now requires every module to be installed to the user on which the apps they want to hook are installed. Some devices restrict modules from installing onto some users. In such a case, you can install them from the manager (but it's not recommended). Notice that the module won't take extra space if you install it on different users: there will only be *one* apk.
+之前 LSPosed 仅识别安装在主用户的模块，该策略并非完美且导致诸多问题：一些模块需要获取安装应用列表以进行配置，但是该列表无法跨用户获取；一些模块需要从被注入应用获取本身，这样会在非主用户无法正常工作；一些用户希望分用户对模块进行配置，这也无法实现。于是，LSPosed 现在要求模块必须安装到对应用户上以注入到该用户上的应用。某些设备不允许模块安装到某些用户上，此时可以利用管理器安装（非万不得已时不推荐）。注意，安装在其他用户的模块不会占用额外空间：永远只有*一个* apk。

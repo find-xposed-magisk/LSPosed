@@ -1,0 +1,25 @@
+Happy Chinese National Day!
+### Changelog
+- Parasitize manager into Shell as it is a system app to avoid detecting manager package name as the manager is not installed on the system!  
+- Fix crashes caused by some JIT info are recycled by JIT GC, thanks @2Y2s1mple
+- Add a new API that allows deoptimizing some methods to fix some hooks not working caused by inlining, thanks @kdrag0n
+- Fix modules may be loaded twice in Android 12 
+- Fix rare inactivation after "soft reboot"
+- Prevent crash when no browser is available
+- Switching language is now available
+- Optimize manager response
+
+Note: Magisk modules repo is no longer maintained, we will stop publishing to it since the next release. Follow us on our [GitHub](https://github.com/LSPosed/LSPosed) or [Telegram](https://t.me/LSPosed) to get the latest news at the first time! 
+
+国庆节快乐！
+### 更新日志
+- 寄生管理器到 Shell，防止检测管理器包名
+- 修复 JIT 信息被垃圾回收导致的崩溃
+- 添加新的 API 用于取消优化部分方法以避免 hook 在内联后失效
+- 修复安卓 12 下模块可能加载两次的问题
+- 修复软重启后低概率发生的未激活问题
+- 阻止没有浏览器可用时的管理器崩溃
+- 支持切换语言
+- 优化管理器响应
+
+注： 由于 Magisk 模块仓库已不再维护，从下个版本开始我们将停止向其推送更新。在我们的 [GitHub](https://github.com/LSPosed/LSPosed) 或者 [Telegram](https://t.me/LSPosed) 上关注我们以获取最新消息！

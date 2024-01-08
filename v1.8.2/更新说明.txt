@@ -1,0 +1,17 @@
+### Changelog
+- Fix rare inactivation after reboot
+- Prevent infinite recursion when modules hooked critical methods
+- Fix resource hook on ZUI devices
+- Fix resource hook for layout
+- Skip duplicate scopes for module process
+- Avoid creating the LoadedApk from ourselves
+- App UI improvements
+
+### 更新日志
+- 修复一个低概率的未激活
+- 阻止因模块 hook 部分关键方法引发的无限递归
+- 修复 ZUI 设备上的资源钩子
+- 修复对布局的资源钩子
+- 修复模块重复加载
+- 避免自行创建 LoadedApk 引发的问题
+- App UI 更新与修复

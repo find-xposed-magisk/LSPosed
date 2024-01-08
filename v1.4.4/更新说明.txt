@@ -1,0 +1,11 @@
+### Changelog
+- Fix app crash or bootloop when the module returns a mismatched value
+- Fix the issue that duplicated modules are displayed when installing modules
+- Refactor the manager to use AndroidX Navigation
+- Log when the hooked app crashes, helping module developer better debug their modules
+
+### 更新日志
+- 修复当模块返回不匹配值时应用崩溃或无法开机
+- 修复安装时显示重复模块的问题
+- 使用 AndroidX Navigation 重构管理器
+- 在被 hook 应用崩溃时输出日志，帮助模块作者更好调试模块

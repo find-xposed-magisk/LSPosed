@@ -1,0 +1,9 @@
+### Changelog
+- Fix the issue that Magisk mounted apps are not displayed
+- Update some strings
+- Remove workaround for modules who get module's apk path from classloader's `DexFile`'s name.
+
+### 更新日志
+- 修复 Magisk 挂载的应用不被显示的问题
+- 更新一些字符串
+- 移除从类加载器的 `DexFile` 名字获取模块 apk 路径的兼容。（旧版QQ复读机可能无法使用）

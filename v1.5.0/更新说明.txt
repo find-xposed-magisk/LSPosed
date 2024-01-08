@@ -1,0 +1,29 @@
+### Changelog
+- Fix manager white screen
+- Support split-apk modules (LSPosed will choose only one apk with `xposed_init` to load)
+- Fix manager crash when launching an uninstalled module from notification
+- Load modules with `SharedMemory` (it can speedup app cold launch) <sup>2</sup>
+- New manager icon
+- Fix incorrect update notification in the first installation
+- Fix some apps not showing in the scope list in some rare cases
+- Show notification of module uninstallation
+- Prevent modules from hooking inner methods (methods from `XposedBridge`'s classloader)
+
+### 更新日志
+- 修复管理器白屏
+- 支持 split apk 形式的模块（LSPosed 会加载第一个带 `xposed_init` 的 apk）
+- 修复从通知打开已卸载模块时候的崩溃
+- 使用 `SharedMemory` 加载模块（这可以加快 app 冷启动速度）<sup>2</sup>
+- 新的管理器图标
+- 修复第一次安装错误的更新提示
+- 修复在极其罕见情况下某些应用不显示在作用域列表
+- 卸载模块时显示通知
+- 防止模块 hook 内部方法（与 `XposedBridge` 同一个类加载器的方法）
+
+---
+
+<sup>1</sup> For some weird devices that prevent installing apps from the root user, please install the manager from `/data/adb/lspd/manager.apk` or `manager.apk` from the zip file manually.
+<sup>2</sup> Some modules get modules' apk path using reflection of its classloader, it's not recommended and unstable since the apk path from classloader no longer exists when using `SharedMemory` to load modules. Please use the documented way (from `IXposedHookZygoteInit.StartupParam.modulePath`) instead. See #856 as well.
+
+<sup>1</sup> 对于阻止从根用户安装应用的设备，请手动从 `/data/adb/lspd/manager.apk` 或 zip 文件中的 `manager.apk` 安装管理器。
+<sup>2</sup> 一些模块使用反射从类加载器获取模块路径，这是不稳定的，在使用 `SharedMemory` 加载模块后这里已经不存在模块路径。请使用文档中的方法（从 `IXposedHookZygoteInit.StartupParam.modulePath` 获取）。详见 #856。

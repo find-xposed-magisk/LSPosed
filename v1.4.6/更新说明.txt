@@ -1,0 +1,9 @@
+### Changelog
+- Fix completely broken native hook since v1.4.5
+- Rework module repository implementation which brings better markdown support, fancier README rendering, and module update detection 
+- Fix a few crash issues
+
+### 更新日志
+- 修复上个版本完全坏掉的 native hook
+- 重构模块仓库实现，带来了更好的 markdown 支持和自述文件渲染，并支持模块更新检测
+- 修复一些崩溃问题

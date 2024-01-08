@@ -1,0 +1,13 @@
+### Changelog
+- Fix resource hook in Android 12 release
+- Fix modules not working in the early period after reboot
+- Show updates and shortcut request only when activated
+- Fix crash of parasitic manager on some devices
+- Fold long module descriptions
+
+### 更新日志
+- 修复安卓 12 正式版的资源挂钩
+- 修复模块刚开机时不能激活
+- 只在激活情况下显示更新和快捷方式请求
+- 修复寄生管理器在某些设备下闪退
+- 折叠过长的模块描述

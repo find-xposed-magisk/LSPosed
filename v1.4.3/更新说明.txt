@@ -1,0 +1,16 @@
+### Changelog
+- Remove multiple internal native hooks, which brings better performance
+- Fix manager installation on Pixel devices with Android 12
+- Fix compatibility of Android 8.1
+- Show the user name in manager instead of the user id<sup>1</sup>
+
+
+
+### 更新日志
+- 移除多个内部的 native hook，带来了更好的性能
+- 修复 Pixel 设备在 Android 12 下的管理器安装问题
+- 修复 Android 8.1 的兼容
+- 在管理器不再显示用户 id 而是显示用户名<sup>1</sup>
+
+1. If surprised by the user name, you can change it from `Settings`-`System`-`Advanced`-`Multiple users`. The route may vary from ROM to ROM.
+如果对用户名感到意外，可以在设备的设置-系统-高级-多用户界面修改用户名，不同系统的位置可能不一样。

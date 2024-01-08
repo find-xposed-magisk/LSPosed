@@ -1,0 +1,11 @@
+### Changelog
+- Fix crash when failed to load a dex
+- Fix updating of pm-hidden modules
+- Fix updating modules after soft-rebooting
+- Fix manager crash on tablet devices
+
+### 更新日志
+- 修复加载 dex 失败后的崩溃
+- 修复被 pm hide 的模块的更新
+- 修复软重启后模块不更新
+- 修复平板下管理器崩溃

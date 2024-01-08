@@ -1,0 +1,16 @@
+### Changelog
+
+- Fix in MIUI dual modules added by manager will be deleted by reboot
+- Automatically switch user when launching apps or modules of secondary users.
+- Support launching modules with `android:showForAllUsers="true"` without switching user
+- Fix Riru installation check
+- Fix activation of modules from non-primary users
+
+
+
+### 更新日志
+- 修复 MIUI 下管理器添加的双开模块重启被自动移除
+- 启动次用户模块或者应用时自动切换用户
+- 支持不切换用户下启动带 `android:showForAllUsers="true"` 的模块
+- 修复检查 Riru 安装
+- 修复非主用户下模块的激活
